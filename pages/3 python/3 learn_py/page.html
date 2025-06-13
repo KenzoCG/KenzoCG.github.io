@@ -1,0 +1,153 @@
+<h2>Introduction</h2>
+<p>
+    Welcome to the Learn Python section!
+    In this tutorial, I'll guide you through the basics to get you up and running with Python.
+    Before we start, ensure you have two things ready, a code editor (like VS Code or PyCharm) and Python installed on your computer.
+    If you need help with installation, check out the <a target="_blank" href="python_setup.html">Python Setup Section</a>.
+</p>
+
+<h2>Part 1 - Understanding the Python Interpreter</h2>
+<p>
+    Before we jump into writing code, let's take a quick look at how Python works behind the scenes.
+    This will help you understand what happens when you run your programs.
+    The key player here is the <strong>Python Interpreter</strong>, the program that reads and executes your Python code.
+</p>
+<p>
+    On my Windows machine, for example, the interpreter is located at:
+</p>
+<code class="highlight">C:\Users\Kenzo\AppData\Local\Programs\Python\Python313\python.exe</code>
+<p>
+    When you write Python code, you'll save it in a file with a <code class="highlight">.py</code> extension (e.g., <code class="highlight">script.py</code>).
+    This extension tells your operating system that it's a Python file and allows the interpreter to recognize it.
+    To run this file, you'll use a terminal (like Command Prompt on Windows or Terminal on macOS/Linux) and provide two pieces of information: the path to the Python interpreter and the path to your <code class="highlight">.py</code> file.
+</p>
+<p>Here's an example command:</p>
+<code class="highlight">C:\Users\Kenzo>python C:\script.py</code>
+<p>Let's break this command into its two main parts:</p>
+<ol>
+    <li><code class="highlight">python</code></li>
+    <p>
+        This is the command to launch the Python interpreter.
+        If your system's environment variables (like PATH) include the directory where <code class="highlight">python.exe</code> is stored, typing <code class="highlight">python</code> is enough to start it.
+        If this doesn't work on your machine, it means the path isn't set up yet. See the <a target="_blank" href="python_setup.html">Python Setup Section</a> for instructions on how to fix this.
+        Essentially, this part just tells your computer to run the Python program.
+    </p>
+    <li><code class="highlight">C:\script.py</code></li>
+    <p>
+        This is the path to your Python file.
+        After launching the interpreter with <code class="highlight">python</code>, you pass the file path as an argument.
+        The interpreter then locates your file and starts executing the code inside it.
+    </p>
+</ol>
+<p>
+    The diagram below illustrates how the Python interpreter processes your <code class="highlight">.py</code> file:
+</p>
+<embed src="pdfs/Python Interpreter.pdf" type="application/pdf" width="100%" height="645px"/>
+
+<h2>Part 2 - Our First Script</h2>
+<p><b>Note</b> : An easy way to run a python script in VS-Code is right clicking on the file in the Explorer and selecting "Run Python File in Terminal" from the popup menu.</p>
+<p>Steps to create and run your first script.</p>
+<ol>
+    <li>Open a code editor</li>
+    <li>Create a new file</li>
+    <li>Name it script.py</li>
+    <li>Type out the code below into the file and save the file</li>
+    <li>Open a terminal</li>
+    <li>Type out the path like this : <code class="highlight">C:\Users\Kenzo>python C:\script.py</code></li>
+    <li>Press enter / return</li>
+    <li>You should see the print command output, which is 30</li>
+</ol>
+<pre class="line-numbers"><code class="language-python"># C:\script.py
+a = 10
+b = 20
+result = a + b
+print(result)
+</code></pre>
+<p>
+    Now for the fun part, understanding what is happening in the code, even though in this case it might be rather obvious.
+    Python is known for its readability.
+    But lets break this down line by line.
+</p>
+<embed src="pdfs/Python First Program.pdf" type="application/pdf" width="100%" height="645px"/>
+
+<h2>Built-in Data Types</h2>
+<p>
+    As we just seen from the above script, it's possible to create references to data and store those references in a variable.
+    So far we have only looked at the integer type, which is just a numeric value without decimal precision.
+    If you want to use decimal precision than using the float type might be a good choice.
+    Lets look at using float types.
+</p>
+<pre class="line-numbers"><code class="language-python"># Numeric Float
+a = 10.5
+b = 2
+result = a / b
+print(result) # <-- 5.25
+</code></pre>
+<b>Note</b> In python, if you divide any two numbers, regardless if they are integers or not, it will always evaluate to a float.
+<pre class="line-numbers"><code class="language-python"># Divide two integers and get a float value
+a = 10
+b = 2
+result = a / b
+print(result) # <-- 5.0
+</code></pre>
+<p>You can use the built-in function <code class="highlight">type()</code> to check the data type of a variable.</p>
+<pre class="line-numbers"><code class="language-python"># Divide two integers and get a float value
+a = 10
+b = 2
+result = a / b
+print(type(result)) # class 'float'
+</code></pre>
+<p>
+    What if you want to store a reference to a word or sentence?
+    For this this you will need to use something called a string.
+    You can think of this as a string of characters where a character represents a single letter or number.
+    All you need to do is put the character(s) between double or single quotes.
+</p>
+<pre class="line-numbers"><code class="language-python"># Strings
+name = "Shrek"
+print(name)
+phrase = "I'm an ogre!"
+print(phrase)
+</code></pre>
+<p>
+    So far so good, we have integers (ints), floats, and strings.
+    But wait, theres more!
+    When it comes to controlling the flow of the program (more on that later), we want to be able to save yes or no answers.
+    For examples, was the movie good? Yes or No. Depending on the answer we will want the program to take different actions.
+    This is what the boolean (bool) data type is for.
+</p>
+<pre class="line-numbers"><code class="language-python"># Booleans
+poop_smells_good = False
+
+if poop_smells_good:       # <-- if statement
+    print("Are you sure?") # <-- Printing a string
+else:
+    print("Yeah, I thought so! >.<")
+</code></pre>
+<p>
+    What if you need to save a list of items? Well, simple enough you can do just that.
+    The list type is one of many sequence types.
+    All of these types will become more useful when we make programs that act upon the data. (We will get there soon)
+</p>
+<pre class="line-numbers"><code class="language-python"># List
+items = [1, 2, 3, 4, 5]
+print(items)
+
+# Iterate
+for item in items:
+    print(item)
+
+# Index
+first_item = items[0]
+last_item = items[-1]
+
+# Slice
+sub_section_a = items[0:2]
+sub_section_b = items[0:2]
+
+</code></pre>
+<p></p>
+
+<pre class="line-numbers"><code class="language-python">
+</code></pre>
+

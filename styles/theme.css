@@ -1,0 +1,183 @@
+/* -------------------- VARIABLES -------------------- */
+
+:root {
+    --kenzo-green: #00ff15;
+    --kenzo-purple: #711bc2;
+    --body-bg: #131313;
+    --body-font-color: #e0e0e0;
+    --side-width: 12rem;
+    --side-bg-a: #1f1f1f;
+    --side-bg-b: #1a1a1a;
+    --side-bg-c: #0f0f0f;
+    --main-bg: #353535;
+    --main-h: #ff7e14;
+    --main-bold: #efff14;
+    --light-blue: #96efff;
+}
+
+/* -------------------- GLOBAL SELECTORS -------------------- */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: var(--body-font-color);
+}
+html {
+    font-size: 1em;
+}
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--body-bg);
+    color: var(--body-font-color);
+}
+
+/* -------------------- SIDE BAR SELECTORS -------------------- */
+
+.sidebar {
+    width: var(--side-width);
+    height: 100%;
+    position: fixed;
+    overflow-x: hidden;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--side-bg-a);
+    border-color: var(--side-bg-c);
+    border-style: solid;
+    border-width: 10px;
+    border-radius: 5px;
+}
+.sidebar img {
+    display: block;
+    width: 8rem;
+    height: 8rem;
+    margin: 10px auto;
+    object-fit: cover;
+}
+.sidebar a {
+    display: block;
+    padding: 8px;
+    color: #b0b0b0;
+    text-decoration: none;
+    background-color: #111111;
+}
+.sidebar a:hover {
+    background-color: var(--kenzo-purple);
+    color: white;
+    border-radius: 5px;
+}
+.sidebar a.active {
+    background-color: var(--kenzo-green);
+    color: #000000;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.sidebar ul, 
+.sidebar ul li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+}
+.sidebar ul li a {
+    background-color: var(--side-bg-b);
+}
+
+/* -------------------- CONTENT SELECTORS -------------------- */
+
+.content {
+    margin: 1rem;
+    margin-left: calc(var(--side-width) + 1rem);
+    padding: 1rem;
+    background-color: var(--main-bg);
+    border-radius: 5px;
+}
+.content h1, h2, h3, h4, h5, h6 {
+    padding: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: left;
+    background-color: var(--body-bg);
+    color: var(--main-h);
+    border-style: solid;
+    border-color: var(--side-bg-c);
+    border-width: 5px;
+    border-radius: 5px;
+}
+.content p {
+    padding: 0.5rem 0 0.5rem 0;
+}
+.content a {
+    color: var(--kenzo-green);
+    text-decoration: None;
+}
+.content a:hover {
+    color: #fcf819;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.content ul, ol {
+    margin-left: 2rem;
+}
+.content ul li {
+    list-style-type: disc;
+}
+.content ol li {
+    padding-left: 0.5rem;
+}
+.content ul li a, ol li a {
+    padding-right: 1rem;
+    color: var(--kenzo-green);
+    text-decoration: none;
+}
+.content table {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    border-collapse: collapse;
+}
+.content th, td {
+    text-align: left;
+    padding: 0.5rem;
+}
+.content th {
+    background-color: var(--side-bg-c);
+}
+.content tr:nth-child(even) {
+    background-color: var(--side-bg-a)
+}
+.content tr:nth-child(odd) {
+    background-color: var(--side-bg-b)
+}
+.content table tr td a {
+    padding-right: 1em;
+    color: var(--kenzo-green);
+    text-decoration: none;
+}
+.content img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    border-color: var(--side-bg-a);
+}
+.content b {
+    color: var(--main-bold);
+}
+.content embed {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    border-color: var(--side-bg-a);
+}
+
+/* -------------------- UTILITY SELECTORS -------------------- */
+
+.highlight {
+    color: var(--light-blue);
+}

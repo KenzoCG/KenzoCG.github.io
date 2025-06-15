@@ -184,7 +184,7 @@ def build():
     # Nav
     nav_items = []
     nav_items.append('\t\t<nav class="sidebar">')
-    nav_items.append('\t\t\t<a href="https://kenzocg.github.io" target="_blank"><img src="images/KodoPy.png"></a>')
+    nav_items.append('\t\t\t<a href="https://kenzocg.github.io" target="_blank"><img src="images/KenzoCG_V1_Alpha.png"></a>')
     for page in pages:
         all_pages.append(page)
         tag = f'\t\t\t<a href="{page.write_name}">{page.page_title}</a>'
@@ -223,6 +223,7 @@ def build():
             '\n<!--------------------------------------------- PAGE --------------------------------------------->',
             # header,
             page.page_content,
+            '\t\t<p>&copy CGBOUNDARY</p>',
             '\n<!--------------------------------------------- FOOTER --------------------------------------------->',
             '\t\t</div>',
             '\t\t<script src="scripts/prism.js"></script>',
